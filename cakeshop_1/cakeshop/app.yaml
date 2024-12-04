@@ -1,0 +1,21 @@
+application: cakeshop
+version: 1
+runtime: python27  # Use Python 2.7 for WebApp2
+
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /static
+  static_dir: static/  # Serve static files (images, JS, etc.) from the static directory
+
+- url: /.*
+  script: main.app  # Point to your main.py (or app.py) where your webapp2 app is defined
+
+libraries:
+- name: webapp2
+  version: "2.5.2"  # Make sure to use the correct version of webapp2
